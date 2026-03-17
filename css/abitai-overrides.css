@@ -601,6 +601,7 @@ video {
 
 .blog-page {
   padding-top: calc(var(--nav-offset) + 1rem);
+  overflow-x: hidden;
 }
 
 .blog-shell {
@@ -703,6 +704,7 @@ video {
   border-radius: 1.25rem;
   background: rgb(255 255 255 / 0.8);
   border: 1px solid rgb(34 34 34 / 0.08);
+  min-width: 0;
 }
 
 .blog-meta-label {
@@ -720,6 +722,7 @@ video {
   border-radius: 2rem;
   background: #222;
   color: #fff;
+  min-width: 0;
 }
 
 .blog-checklist,
@@ -987,6 +990,7 @@ video {
 .blog-toc a,
 .blog-related-links a,
 .blog-sources a {
+  display: block;
   padding: 0.7rem 1rem;
   border-radius: 999px;
   border: 1px solid rgb(34 34 34 / 0.08);
@@ -996,6 +1000,7 @@ video {
   font-family: "DM Sans", sans-serif;
   font-size: 0.95rem;
   line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .blog-evidence-card {
@@ -1091,6 +1096,11 @@ video {
   gap: 0.9rem;
 }
 
+.blog-sources a {
+  min-height: 100%;
+  border-radius: 1.25rem;
+}
+
 @media screen and (max-width: 991px) {
   .blog-overview-grid,
   .blog-sources {
@@ -1099,6 +1109,10 @@ video {
 
   .blog-factor-card {
     flex-direction: column;
+  }
+
+  .blog-factor-card strong:last-child {
+    align-self: flex-start;
   }
 }
 
