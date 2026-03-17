@@ -117,6 +117,7 @@ Related verification record:
 9. Removed the generated navbar background image so the fixed header no longer renders the repeated `Untitled-2.svg` asset.
 10. Re-centered the hero headline vertically by aligning the hero content to the middle of the video area and removing the legacy spacer block that pushed the copy to the bottom.
 11. Balanced the hero padding on mobile breakpoints so the headline stays visually centered on portrait phones instead of drifting toward the bottom.
+12. Locked the hero shell and video container to exact viewport height so the hero now matches the screen height on desktop and mobile instead of expanding beyond it.
 
 ## Verification Strategy
 
@@ -139,6 +140,7 @@ The integration tests verify:
 - no horizontal overflow
 - expected stacking or multi-column behavior by breakpoint
 - hero containment inside the viewport
+- hero section height matches the viewport height on desktop and portrait mobile
 - desktop hero headline stays within the central vertical band of the hero
 - portrait mobile hero headline stays within a central vertical band as well
 - chat height bounds on smaller viewports

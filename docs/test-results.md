@@ -86,10 +86,11 @@ Viewport matrix:
 4. Problems grid reflows correctly across desktop, tablet, and mobile.
 5. Feature cards collapse correctly on smaller viewports.
 6. Hero heading remains contained within the viewport bounds.
-7. Desktop hero heading stays in the central vertical region of the hero instead of hugging the bottom edge.
-8. Portrait mobile hero heading also stays in a central vertical region.
-9. Chat height stays bounded on portrait and landscape mobile layouts.
-10. Navbar background image remains disabled and does not render the repeated SVG asset.
+7. Hero section height matches the viewport height on desktop and portrait mobile.
+8. Desktop hero heading stays in the central vertical region of the hero instead of hugging the bottom edge.
+9. Portrait mobile hero heading also stays in a central vertical region.
+10. Chat height stays bounded on portrait and landscape mobile layouts.
+11. Navbar background image remains disabled and does not render the repeated SVG asset.
 
 ## Latest Verified Results
 
@@ -148,6 +149,8 @@ Latest verified outcome:
 - The hero container alignment was changed to vertical centering, the legacy spacer block was disabled, and the desktop integration test gained a vertical-position assertion.
 - A later mobile review showed the headline still reading low on portrait phones.
 - The mobile hero padding was rebalanced and the portrait-mobile integration test gained its own hero-position assertion.
+- A later review found the hero/video container still not matching viewport height exactly.
+- The hero shell and video container were locked to `100svh`, and the integration suite gained direct hero-height assertions for desktop and portrait mobile.
 
 ### Execution note
 

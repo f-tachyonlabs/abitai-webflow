@@ -35,6 +35,7 @@ async function readLayoutMetrics(page) {
     });
 
     const heroHeading = document.querySelector("[data-testid='hero-heading']").getBoundingClientRect();
+    const heroSection = document.querySelector("[data-testid='hero-section']").getBoundingClientRect();
     const chat = document.querySelector("[data-testid='abitai-chat']").getBoundingClientRect();
     const navbarStyle = window.getComputedStyle(document.querySelector(".navbar"));
     const heroCenterY = heroHeading.top + (heroHeading.height / 2);
@@ -44,6 +45,7 @@ async function readLayoutMetrics(page) {
       featureCards: features,
       heroCenterY,
       heroHeading,
+      heroSectionHeight: heroSection.height,
       introChildren,
       navbarBackgroundImage: navbarStyle.backgroundImage,
       problems,
@@ -63,6 +65,7 @@ test("desktop layout keeps the intro split into two columns without horizontal o
 
   expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.viewportWidth + 1);
   expect(metrics.navbarBackgroundImage).toBe("none");
+  expect(Math.abs(metrics.heroSectionHeight - metrics.viewportHeight)).toBeLessThanOrEqual(2);
   expect(Math.abs(metrics.introChildren[0].top - metrics.introChildren[1].top)).toBeLessThan(40);
   expect(metrics.heroCenterY).toBeGreaterThan(metrics.viewportHeight * 0.28);
   expect(metrics.heroCenterY).toBeLessThan(metrics.viewportHeight * 0.62);
@@ -92,6 +95,7 @@ test("mobile portrait layout collapses cards into one column and constrains the 
   const metrics = await readLayoutMetrics(page);
 
   expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.viewportWidth + 1);
+  expect(Math.abs(metrics.heroSectionHeight - metrics.viewportHeight)).toBeLessThanOrEqual(2);
   expect(metrics.heroCenterY).toBeGreaterThan(metrics.viewportHeight * 0.24);
   expect(metrics.heroCenterY).toBeLessThan(metrics.viewportHeight * 0.58);
   expect(metrics.chatHeight).toBeLessThanOrEqual(metrics.viewportHeight * 0.7);

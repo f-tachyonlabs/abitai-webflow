@@ -86,12 +86,15 @@ video {
 }
 
 .section-hero {
-  min-height: calc(100svh - 0px);
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
 }
 
 .section-2,
 .background-video {
   width: 100%;
+  height: 100svh;
   min-height: 100svh;
 }
 
