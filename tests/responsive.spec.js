@@ -38,6 +38,9 @@ async function readLayoutMetrics(page) {
     const heroSection = document.querySelector("[data-testid='hero-section']").getBoundingClientRect();
     const chat = document.querySelector("[data-testid='abitai-chat']").getBoundingClientRect();
     const navbarStyle = window.getComputedStyle(document.querySelector(".navbar"));
+    const introLeadStyle = window.getComputedStyle(document.querySelector(".text-block"));
+    const introBodyStyle = window.getComputedStyle(document.querySelector(".text-block-2"));
+    const introMetaStyle = window.getComputedStyle(document.querySelector(".div-block-4"));
     const heroCenterY = heroHeading.top + (heroHeading.height / 2);
 
     return {
@@ -46,7 +49,10 @@ async function readLayoutMetrics(page) {
       heroCenterY,
       heroHeading,
       heroSectionHeight: heroSection.height,
+      introBodyTextAlign: introBodyStyle.textAlign,
       introChildren,
+      introLeadTextAlign: introLeadStyle.textAlign,
+      introMetaTextAlign: introMetaStyle.textAlign,
       navbarBackgroundImage: navbarStyle.backgroundImage,
       problems,
       viewportHeight: window.innerHeight,
@@ -66,6 +72,9 @@ test("desktop layout keeps the intro split into two columns without horizontal o
   expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.viewportWidth + 1);
   expect(metrics.navbarBackgroundImage).toBe("none");
   expect(Math.abs(metrics.heroSectionHeight - metrics.viewportHeight)).toBeLessThanOrEqual(2);
+  expect(metrics.introLeadTextAlign).toBe("left");
+  expect(metrics.introBodyTextAlign).toBe("left");
+  expect(metrics.introMetaTextAlign).toBe("left");
   expect(Math.abs(metrics.introChildren[0].top - metrics.introChildren[1].top)).toBeLessThan(40);
   expect(metrics.heroCenterY).toBeGreaterThan(metrics.viewportHeight * 0.28);
   expect(metrics.heroCenterY).toBeLessThan(metrics.viewportHeight * 0.62);

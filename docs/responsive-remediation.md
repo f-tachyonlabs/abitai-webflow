@@ -118,6 +118,7 @@ Related verification record:
 10. Re-centered the hero headline vertically by aligning the hero content to the middle of the video area and removing the legacy spacer block that pushed the copy to the bottom.
 11. Balanced the hero padding on mobile breakpoints so the headline stays visually centered on portrait phones instead of drifting toward the bottom.
 12. Locked the hero shell and video container to exact viewport height so the hero now matches the screen height on desktop and mobile instead of expanding beyond it.
+13. Normalized the intro copy alignment so the WhatsApp lead text and the two supporting text blocks render left-aligned instead of justified.
 
 ## Verification Strategy
 
@@ -143,6 +144,7 @@ The integration tests verify:
 - hero section height matches the viewport height on desktop and portrait mobile
 - desktop hero headline stays within the central vertical band of the hero
 - portrait mobile hero headline stays within a central vertical band as well
+- intro lead and supporting text blocks remain left-aligned
 - chat height bounds on smaller viewports
 - navbar background image remains disabled
 

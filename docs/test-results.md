@@ -89,8 +89,9 @@ Viewport matrix:
 7. Hero section height matches the viewport height on desktop and portrait mobile.
 8. Desktop hero heading stays in the central vertical region of the hero instead of hugging the bottom edge.
 9. Portrait mobile hero heading also stays in a central vertical region.
-10. Chat height stays bounded on portrait and landscape mobile layouts.
-11. Navbar background image remains disabled and does not render the repeated SVG asset.
+10. Intro lead and supporting text blocks remain left-aligned instead of justified.
+11. Chat height stays bounded on portrait and landscape mobile layouts.
+12. Navbar background image remains disabled and does not render the repeated SVG asset.
 
 ## Latest Verified Results
 
@@ -151,6 +152,8 @@ Latest verified outcome:
 - The mobile hero padding was rebalanced and the portrait-mobile integration test gained its own hero-position assertion.
 - A later review found the hero/video container still not matching viewport height exactly.
 - The hero shell and video container were locked to `100svh`, and the integration suite gained direct hero-height assertions for desktop and portrait mobile.
+- A later content review found the intro text block still inheriting justified alignment from the exported Webflow styles.
+- The override layer now forces the three intro text blocks to `text-align: left`, and the integration suite checks that computed alignment directly.
 
 ### Execution note
 

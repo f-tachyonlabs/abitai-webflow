@@ -166,6 +166,7 @@ video {
 .bold-text,
 .text-block-2,
 .div-block-4 {
+  text-align: left;
   max-width: none;
   width: auto;
   padding: 0;
