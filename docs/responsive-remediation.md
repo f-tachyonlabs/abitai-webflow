@@ -4,6 +4,10 @@
 
 This document covers the evaluation, remediation plan, implementation details, and verification work for the AbitAI landing page exported from Webflow.
 
+Related verification record:
+
+- `docs/test-results.md`
+
 ## Evaluation Of The Original UI
 
 ### Critical layout defects

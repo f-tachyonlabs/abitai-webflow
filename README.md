@@ -50,3 +50,8 @@ The workflow will publish the static site automatically.
 
 - This is a Webflow export, so most layout and interaction code is generated.
 - External assets/scripts are loaded from Google Fonts, Webflow CDN, jQuery CDN, and GSAP CDN.
+
+## Documentation
+
+- Responsive audit and remediation: `docs/responsive-remediation.md`
+- Test coverage and latest results: `docs/test-results.md`
