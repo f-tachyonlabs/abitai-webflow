@@ -592,3 +592,346 @@ video {
     grid-template-columns: repeat(2, auto);
   }
 }
+
+.blog-body {
+  background:
+    radial-gradient(circle at top left, rgb(255 101 119 / 0.16), transparent 30%),
+    linear-gradient(180deg, #fff8f5 0%, #fff 42%, #fff7f1 100%);
+}
+
+.blog-page {
+  padding-top: calc(var(--nav-offset) + 1rem);
+}
+
+.blog-shell {
+  width: min(var(--page-max-width), calc(100% - (2 * var(--section-padding-inline))));
+  margin: 0 auto;
+}
+
+.blog-hero,
+.blog-section,
+.blog-cta-section {
+  padding: clamp(2.5rem, 6vw, 6rem) 0;
+}
+
+.blog-breadcrumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font: 500 0.9rem/1.4 "DM Sans", sans-serif;
+  color: rgb(34 34 34 / 0.65);
+}
+
+.blog-breadcrumbs a,
+.blog-text-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: stretch;
+}
+
+.blog-hero-copy,
+.blog-summary-card,
+.blog-card,
+.blog-scoreboard,
+.blog-process,
+.blog-faq,
+.blog-cta-card {
+  border: 1px solid rgb(34 34 34 / 0.08);
+  box-shadow: 0 20px 50px rgb(17 17 17 / 0.06);
+}
+
+.blog-hero-copy {
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: 2rem;
+  background: linear-gradient(140deg, #ffffff 0%, #fff1eb 100%);
+}
+
+.blog-eyebrow,
+.blog-summary-kicker,
+.blog-meta-label,
+.blog-card-number {
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.blog-eyebrow,
+.blog-summary-kicker {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.blog-title {
+  margin: 0 0 1rem;
+  font-family: Garet Bold, Verdana, sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.94;
+  letter-spacing: 0.02em;
+}
+
+.blog-standfirst,
+.blog-card p,
+.blog-score-row p,
+.blog-process-step p,
+.blog-faq-item p,
+.blog-cta-copy,
+.blog-summary-card p,
+.blog-list li {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.blog-meta-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.blog-meta-card {
+  padding: 1rem 1.1rem;
+  border-radius: 1.25rem;
+  background: rgb(255 255 255 / 0.8);
+  border: 1px solid rgb(34 34 34 / 0.08);
+}
+
+.blog-meta-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: rgb(34 34 34 / 0.55);
+  font-size: 0.72rem;
+}
+
+.blog-summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 2.2rem);
+  border-radius: 2rem;
+  background: #222;
+  color: #fff;
+}
+
+.blog-checklist,
+.blog-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.blog-checklist li,
+.blog-list li {
+  margin-bottom: 0.85rem;
+}
+
+.blog-section-head {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.blog-grid {
+  display: grid;
+  gap: var(--card-gap);
+}
+
+.blog-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.blog-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+
+.blog-card {
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  background: #fff;
+}
+
+.blog-card-soft {
+  background: linear-gradient(180deg, #fff 0%, #fff8f5 100%);
+}
+
+.blog-card-number {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.blog-section-highlight {
+  position: relative;
+}
+
+.blog-section-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 8% 0 auto;
+  height: 18rem;
+  background: radial-gradient(circle, rgb(255 101 119 / 0.12), transparent 65%);
+  pointer-events: none;
+}
+
+.blog-scoreboard,
+.blog-process,
+.blog-faq,
+.blog-cta-card {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 2rem;
+  background: #fff;
+}
+
+.blog-scoreboard {
+  display: grid;
+  gap: 1rem;
+}
+
+.blog-score-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(34 34 34 / 0.08);
+}
+
+.blog-score-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.blog-score-row-strong strong,
+.blog-score-title {
+  color: var(--accent-color);
+}
+
+.blog-score-title {
+  margin-bottom: 0.35rem;
+  font-family: Garet Bold, Verdana, sans-serif;
+  font-size: 1.35rem;
+}
+
+.blog-process {
+  display: grid;
+  gap: 1rem;
+}
+
+.blog-process-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(34 34 34 / 0.08);
+}
+
+.blog-process-step:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.blog-process-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: #222;
+  color: #fff;
+  font-family: Garet Bold, Verdana, sans-serif;
+  font-size: 1.1rem;
+}
+
+.blog-faq {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.blog-faq-item {
+  padding: 1rem 1.1rem;
+  border-radius: 1.1rem;
+  background: #fff8f5;
+}
+
+.blog-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: Garet Bold, Verdana, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.blog-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.blog-faq-item p {
+  margin-top: 0.85rem;
+}
+
+.blog-cta-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: end;
+  background: linear-gradient(135deg, #222 0%, #3a2b2d 100%);
+  color: #fff;
+}
+
+.blog-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.blog-cta-actions .blog-text-link {
+  font-family: "DM Sans", sans-serif;
+  color: rgb(255 255 255 / 0.82);
+}
+
+@media screen and (max-width: 991px) {
+  .blog-hero-grid,
+  .blog-grid-3,
+  .blog-grid-2,
+  .blog-cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-meta-row {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-score-row {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .blog-title {
+    font-size: clamp(2.4rem, 13vw, 4rem);
+  }
+
+  .blog-hero-copy,
+  .blog-summary-card,
+  .blog-card,
+  .blog-scoreboard,
+  .blog-process,
+  .blog-faq,
+  .blog-cta-card {
+    border-radius: 1.4rem;
+  }
+}
