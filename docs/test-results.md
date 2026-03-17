@@ -90,8 +90,9 @@ Viewport matrix:
 8. Desktop hero heading stays in the central vertical region of the hero instead of hugging the bottom edge.
 9. Portrait mobile hero heading also stays in a central vertical region.
 10. Intro lead and supporting text blocks remain left-aligned instead of justified.
-11. Chat height stays bounded on portrait and landscape mobile layouts.
-12. Navbar background image remains disabled and does not render the repeated SVG asset.
+11. Desktop intro mock and copy columns preserve a minimum horizontal gap.
+12. Chat height stays bounded on portrait and landscape mobile layouts.
+13. Navbar background image remains disabled and does not render the repeated SVG asset.
 
 ## Latest Verified Results
 
@@ -154,6 +155,8 @@ Latest verified outcome:
 - The hero shell and video container were locked to `100svh`, and the integration suite gained direct hero-height assertions for desktop and portrait mobile.
 - A later content review found the intro text block still inheriting justified alignment from the exported Webflow styles.
 - The override layer now forces the three intro text blocks to `text-align: left`, and the integration suite checks that computed alignment directly.
+- A later layout review found the intro mock/chat column visually crowding the WhatsApp copy.
+- The desktop intro grid gap was increased, the column widths were rebalanced, and the integration suite gained a minimum-gap assertion.
 
 ### Execution note
 

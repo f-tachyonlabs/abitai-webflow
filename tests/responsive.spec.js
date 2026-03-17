@@ -75,6 +75,7 @@ test("desktop layout keeps the intro split into two columns without horizontal o
   expect(metrics.introLeadTextAlign).toBe("left");
   expect(metrics.introBodyTextAlign).toBe("left");
   expect(metrics.introMetaTextAlign).toBe("left");
+  expect(metrics.introChildren[1].left - (metrics.introChildren[0].left + metrics.introChildren[0].width)).toBeGreaterThan(48);
   expect(Math.abs(metrics.introChildren[0].top - metrics.introChildren[1].top)).toBeLessThan(40);
   expect(metrics.heroCenterY).toBeGreaterThan(metrics.viewportHeight * 0.28);
   expect(metrics.heroCenterY).toBeLessThan(metrics.viewportHeight * 0.62);

@@ -135,8 +135,8 @@ video {
   width: min(var(--page-max-width), calc(100% - (2 * var(--section-padding-inline))));
   margin: 0 auto;
   padding: var(--section-spacing) 0;
-  grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 1.05fr);
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 0.88fr) minmax(20rem, 0.96fr);
+  gap: clamp(3rem, 6vw, 6rem);
   align-items: start;
 }
 
