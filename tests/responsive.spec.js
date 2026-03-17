@@ -37,10 +37,12 @@ async function readLayoutMetrics(page) {
     const heroHeading = document.querySelector("[data-testid='hero-heading']").getBoundingClientRect();
     const chat = document.querySelector("[data-testid='abitai-chat']").getBoundingClientRect();
     const navbarStyle = window.getComputedStyle(document.querySelector(".navbar"));
+    const heroCenterY = heroHeading.top + (heroHeading.height / 2);
 
     return {
       chatHeight: chat.height,
       featureCards: features,
+      heroCenterY,
       heroHeading,
       introChildren,
       navbarBackgroundImage: navbarStyle.backgroundImage,
@@ -62,6 +64,8 @@ test("desktop layout keeps the intro split into two columns without horizontal o
   expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.viewportWidth + 1);
   expect(metrics.navbarBackgroundImage).toBe("none");
   expect(Math.abs(metrics.introChildren[0].top - metrics.introChildren[1].top)).toBeLessThan(40);
+  expect(metrics.heroCenterY).toBeGreaterThan(metrics.viewportHeight * 0.28);
+  expect(metrics.heroCenterY).toBeLessThan(metrics.viewportHeight * 0.62);
   expect(metrics.heroHeading.left).toBeGreaterThanOrEqual(0);
   expect(metrics.heroHeading.right).toBeLessThanOrEqual(metrics.viewportWidth);
   expect(Math.abs(metrics.problems[0].top - metrics.problems[1].top)).toBeLessThan(20);

@@ -86,8 +86,9 @@ Viewport matrix:
 4. Problems grid reflows correctly across desktop, tablet, and mobile.
 5. Feature cards collapse correctly on smaller viewports.
 6. Hero heading remains contained within the viewport bounds.
-7. Chat height stays bounded on portrait and landscape mobile layouts.
-8. Navbar background image remains disabled and does not render the repeated SVG asset.
+7. Desktop hero heading stays in the central vertical region of the hero instead of hugging the bottom edge.
+8. Chat height stays bounded on portrait and landscape mobile layouts.
+9. Navbar background image remains disabled and does not render the repeated SVG asset.
 
 ## Latest Verified Results
 
@@ -142,6 +143,8 @@ Latest verified outcome:
 - That issue was fixed by aligning the intro grid to the top edge.
 - A later visual review exposed a repeated SVG background in the fixed navbar.
 - The fix was added in `css/abitai-overrides.css`, and a regression assertion was added to the Playwright suite.
+- A later visual review found the hero headline sitting too close to the bottom of the video.
+- The hero container alignment was changed to vertical centering, the legacy spacer block was disabled, and the desktop integration test gained a vertical-position assertion.
 
 ### Execution note
 

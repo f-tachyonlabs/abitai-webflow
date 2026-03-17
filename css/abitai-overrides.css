@@ -98,7 +98,7 @@ video {
 .background-video {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   padding: calc(var(--nav-offset) + 2rem) var(--section-padding-inline) clamp(2rem, 7vw, 5rem);
   overflow: hidden;
@@ -118,7 +118,7 @@ video {
 }
 
 .div-block-24 {
-  height: clamp(10rem, 28vh, 18rem);
+  display: none;
 }
 
 .heading,

@@ -115,6 +115,7 @@ Related verification record:
 7. Fixed the zoom-detection bug by treating missing viewport zoom data as `1` rather than `devicePixelRatio`.
 8. Added browser-automation hooks via `data-testid` attributes.
 9. Removed the generated navbar background image so the fixed header no longer renders the repeated `Untitled-2.svg` asset.
+10. Re-centered the hero headline vertically by aligning the hero content to the middle of the video area and removing the legacy spacer block that pushed the copy to the bottom.
 
 ## Verification Strategy
 
@@ -137,6 +138,7 @@ The integration tests verify:
 - no horizontal overflow
 - expected stacking or multi-column behavior by breakpoint
 - hero containment inside the viewport
+- desktop hero headline stays within the central vertical band of the hero
 - chat height bounds on smaller viewports
 - navbar background image remains disabled
 
