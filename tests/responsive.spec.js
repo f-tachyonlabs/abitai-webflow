@@ -92,6 +92,8 @@ test("mobile portrait layout collapses cards into one column and constrains the 
   const metrics = await readLayoutMetrics(page);
 
   expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.viewportWidth + 1);
+  expect(metrics.heroCenterY).toBeGreaterThan(metrics.viewportHeight * 0.24);
+  expect(metrics.heroCenterY).toBeLessThan(metrics.viewportHeight * 0.58);
   expect(metrics.chatHeight).toBeLessThanOrEqual(metrics.viewportHeight * 0.7);
   expect(metrics.problems[1].top - metrics.problems[0].top).toBeGreaterThan(80);
   expect(metrics.featureCards[1].top - metrics.featureCards[0].top).toBeGreaterThan(80);
