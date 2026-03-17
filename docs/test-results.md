@@ -154,6 +154,7 @@ Latest verified outcome:
 - `tests/responsive.spec.js`
 - `playwright.config.js`
 - `docs/responsive-remediation.md`
+- `docs/manual-testing-and-code-quality.md`
 
 ## Re-run Instructions
 

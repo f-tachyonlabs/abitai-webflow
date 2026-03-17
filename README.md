@@ -55,3 +55,4 @@ The workflow will publish the static site automatically.
 
 - Responsive audit and remediation: `docs/responsive-remediation.md`
 - Test coverage and latest results: `docs/test-results.md`
+- Manual testing and code-quality guide: `docs/manual-testing-and-code-quality.md`
