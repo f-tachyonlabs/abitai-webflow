@@ -36,6 +36,11 @@ video {
   inset-block-start: var(--nav-offset);
 }
 
+.navbar {
+  background-image: none;
+  background-color: transparent;
+}
+
 .container-2 {
   position: sticky;
   top: 0;

@@ -26,6 +26,9 @@ This document covers the evaluation, remediation plan, implementation details, a
 6. The footer grid and brand icon sizes were tied to viewport height.
    Footer items scaled off the height of the screen instead of the content needs, which is especially unstable on mobile browsers with dynamic browser chrome.
 
+7. The fixed navbar still inherited a generated repeating SVG background.
+   The exported `.navbar` rule applied `Untitled-2.svg` as a background image, which could render as a logo-filled strip across the top of the page.
+
 ### JavaScript defects
 
 1. The chat zoom compensation used `devicePixelRatio` as the fallback zoom signal.
@@ -74,7 +77,7 @@ This document covers the evaluation, remediation plan, implementation details, a
 
 10. Add automated verification.
     Unit tests should validate chat scaling logic.
-    Integration tests should load the real page at multiple viewport sizes and verify no horizontal overflow, expected reflow patterns, and bounded chat height.
+    Integration tests should load the real page at multiple viewport sizes and verify no horizontal overflow, expected reflow patterns, bounded chat height, and absence of the generated navbar background image.
 
 11. Re-run tests and refine until all responsive assertions pass.
 
@@ -107,6 +110,7 @@ This document covers the evaluation, remediation plan, implementation details, a
 6. Removed the inline chat style/script block from the HTML and replaced it with a standalone script.
 7. Fixed the zoom-detection bug by treating missing viewport zoom data as `1` rather than `devicePixelRatio`.
 8. Added browser-automation hooks via `data-testid` attributes.
+9. Removed the generated navbar background image so the fixed header no longer renders the repeated `Untitled-2.svg` asset.
 
 ## Verification Strategy
 
@@ -130,6 +134,7 @@ The integration tests verify:
 - expected stacking or multi-column behavior by breakpoint
 - hero containment inside the viewport
 - chat height bounds on smaller viewports
+- navbar background image remains disabled
 
 ## Follow-up Considerations
 
