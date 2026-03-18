@@ -1122,3 +1122,39 @@ video {
     flex-direction: column;
   }
 }
+
+.reviews-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--card-gap);
+}
+
+.reviews-hub-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: #fff;
+  border: 1px solid rgb(34 34 34 / 0.08);
+  box-shadow: 0 20px 50px rgb(17 17 17 / 0.06);
+}
+
+.reviews-hub-card p {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.reviews-hub-card .blog-text-link {
+  width: fit-content;
+  font-family: "DM Sans", sans-serif;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 991px) {
+  .reviews-hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
